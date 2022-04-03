@@ -61,6 +61,14 @@ class AppTypography {
     height: 1.28,
     wordSpacing: -0.41,
   );
+  TextStyle footnote = const TextStyle(
+    fontFamily: "SFPro",
+    color: CupertinoColors.white,
+    fontWeight: FontWeight.w400,
+    fontSize: 13,
+    height: 1.28,
+    wordSpacing: -0.41,
+  );
   TextStyle callout = const TextStyle(
     fontFamily: "SFPro",
     color: CupertinoColors.white,
