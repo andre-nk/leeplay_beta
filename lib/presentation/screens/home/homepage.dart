@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:leeplay/config/theme.dart';
+import 'package:leeplay/presentation/screens/player/player_page.dart';
 import 'package:leeplay/presentation/widgets/home/playlist_carousel.dart';
 import 'package:marquee/marquee.dart';
 
@@ -75,9 +76,17 @@ class Homepage extends StatelessWidget {
                             child: AspectRatio(
                               aspectRatio: 1 / 1,
                               child: CupertinoButton.filled(
-                                onPressed: () {},
-                                borderRadius:
-                                    const BorderRadius.all(Radius.circular(100)),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    CupertinoPageRoute(
+                                      builder: (_) => const PlayerPage(),
+                                    ),
+                                  );
+                                },
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(100),
+                                ),
                                 padding: const EdgeInsets.symmetric(vertical: 10),
                                 child: const Padding(
                                   padding: EdgeInsets.only(left: 3.0),

@@ -5,6 +5,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:leeplay/domain/auth/cubit/auth_cubit.dart';
 import 'package:leeplay/presentation/screens/auth/onboarding.dart';
 import 'package:leeplay/presentation/screens/home/home_wrapper.dart';
+import 'package:leeplay/presentation/screens/player/player_page.dart';
 import 'package:leeplay/repository/auth/auth_repository.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -47,6 +48,9 @@ class AppWrapper extends StatelessWidget {
         child: CupertinoApp(
           debugShowCheckedModeBanner: false,
           title: 'Leeplay',
+          routes: {
+            'player': (_) => const PlayerPage(),
+          },
           theme: const CupertinoThemeData(
             brightness: Brightness.dark,
             primaryColor: Color(0xFF00B903),
