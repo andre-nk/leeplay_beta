@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:leeplay/presentation/screens/home/homepage.dart';
+import 'package:leeplay/presentation/screens/home/settings_page.dart';
 
 class HomeWrapper extends StatelessWidget {
   const HomeWrapper({Key? key}) : super(key: key);
@@ -30,6 +31,8 @@ class HomeWrapper extends StatelessWidget {
               return const Homepage();
             } else if (index == 1){
               return const Homepage();
+            } else if (index == 2){
+              return const SettingsPage();
             } else {
               return const Homepage();
             }

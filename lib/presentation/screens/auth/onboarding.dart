@@ -13,7 +13,6 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      backgroundColor: CupertinoColors.darkBackgroundGray,
       child: SafeArea(
         top: false,
         child: SizedBox(
@@ -64,14 +63,14 @@ class OnboardingPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 22.0),
                         child: Text(
                           "Unofficial music player for Leeplay's playlists.",
-                          style: AppTheme.text.title1,
+                          style: AppText.dark.title1,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 13.0),
                         child: Text(
                           "Bringing hours of curated playlist for your ever-changing moods and life phases.",
-                          style: AppTheme.text.body,
+                          style: AppText.dark.body,
                         ),
                       ),
                       Padding(
@@ -81,9 +80,12 @@ class OnboardingPage extends StatelessWidget {
                           child: CupertinoButton.filled(
                             child: Center(
                               child: Text(
-                                "Get started",
-                                style: AppTheme.text.body
-                                    .copyWith(fontWeight: FontWeight.bold, height: 1),
+                                "Get started using NAVER",
+                                style: AppText.dark.body.copyWith(
+                                  fontWeight: FontWeight.w600,
+                                  height: 1,
+                                  color: CupertinoColors.white,
+                                ),
                               ),
                             ),
                             pressedOpacity: 0.8,

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:leeplay/config/theme.dart';
+import 'package:leeplay/domain/theme/cubit/theme_cubit.dart';
 import 'package:leeplay/presentation/screens/player/player_page.dart';
 import 'package:leeplay/presentation/widgets/home/playlist_carousel.dart';
 import 'package:marquee/marquee.dart';
@@ -18,7 +20,16 @@ class Homepage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 24.0),
-              child: SvgPicture.asset("assets/leeplay.svg"),
+              child: BlocBuilder<ThemeCubit, ThemeState>(
+                builder: (context, state) {
+                  return SvgPicture.asset(
+                    "assets/leeplay.svg",
+                    color: state is LightTheme
+                        ? CupertinoColors.black
+                        : CupertinoColors.white,
+                  );
+                },
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 12.0),
@@ -52,7 +63,8 @@ class Homepage extends StatelessWidget {
                                     height: 64,
                                     child: Marquee(
                                       text: "우리 나중에 파리 여행 가면 에펠탑 보면서 같이 듣자",
-                                      style: AppTheme.text.headline,
+                                      style: AppText.dark.headline
+                                          .copyWith(color: CupertinoColors.white),
                                       scrollAxis: Axis.horizontal,
                                       crossAxisAlignment: CrossAxisAlignment.end,
                                       blankSpace: 20.0,
@@ -64,7 +76,8 @@ class Homepage extends StatelessWidget {
                                     padding: const EdgeInsets.only(top: 6.0),
                                     child: Text(
                                       "58 minutes",
-                                      style: AppTheme.text.footnote,
+                                      style: AppText.dark.footnote
+                                          .copyWith(color: CupertinoColors.white),
                                     ),
                                   )
                                 ],

@@ -30,6 +30,17 @@ class AuthCubit extends HydratedCubit<AuthState> {
     }
   }
 
+  Future<void> logoutWithLine() async {
+    try {
+      await _authRepository.logoutWithLine();
+      emit(const AuthState(isAuthenticated: false));
+
+      print(state);
+    } catch (e) {
+      emit(AuthState(errorMessage: e.toString(), isAuthenticated: false));
+    }
+  }
+
   @override
   AuthState? fromJson(Map<String, dynamic> json) {
     try {

@@ -32,11 +32,13 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
+  flutter_cupertino_settings: ^0.5.0
   flutter_line_sdk: ^2.1.0
   flutter_native_splash: ^2.1.2+1
   flutter_svg: ^1.0.3
   hydrated_bloc: ^8.1.0
   marquee: ^2.2.1
+  modal_bottom_sheet: ^2.0.1
   path_provider: ^2.0.9
   youtube_player_flutter: ^8.0.0
 

@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class PlayerPage extends StatefulWidget {
   const PlayerPage({Key? key}) : super(key: key);
@@ -9,14 +8,6 @@ class PlayerPage extends StatefulWidget {
 }
 
 class _PlayerPageState extends State<PlayerPage> {
-  final YoutubePlayerController _controller = YoutubePlayerController(
-    initialVideoId: YoutubePlayer.convertUrlToId("https://youtu.be/haJKIYlCUfk") ?? 'iLnmTe5Q2Qw',
-    flags: const YoutubePlayerFlags(
-      autoPlay: true,
-      mute: false,
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -33,11 +24,8 @@ class _PlayerPageState extends State<PlayerPage> {
         ),
       ),
       child: Column(
-        children: [
-          YoutubePlayer(
-            controller: _controller,
-            showVideoProgressIndicator: true,
-          ),
+        children: const [
+          
         ],
       ),
     );

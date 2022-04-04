@@ -23,4 +23,12 @@ class AuthRepository {
       throw Exception(e.toString());
     }
   }
+
+  Future<void> logoutWithLine() async {
+    try {
+      await _lineSDK.logout();
+    } catch (e) {
+      throw Exception(e.toString());
+    }
+  }
 }
