@@ -34,8 +34,7 @@ class AuthCubit extends HydratedCubit<AuthState> {
     try {
       await _authRepository.logoutWithLine();
       emit(const AuthState(isAuthenticated: false));
-
-      print(state);
+      
     } catch (e) {
       emit(AuthState(errorMessage: e.toString(), isAuthenticated: false));
     }

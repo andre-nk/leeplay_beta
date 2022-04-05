@@ -25,7 +25,7 @@ class PlaylistCarousel extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 24.0),
-                child: Text(_carouselTitle, style: AppText.dark.title3),
+                child: Text(_carouselTitle, style: AppText.title3),
               ),
               CupertinoButton(
                 child: Row(
@@ -36,7 +36,7 @@ class PlaylistCarousel extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 4.0, right: 8.0),
                       child: Text(
                         "see all",
-                        style: AppText.dark.subheadline
+                        style: AppText.subheadline
                             .copyWith(color: CupertinoColors.systemGrey),
                       ),
                     ),
@@ -92,11 +92,11 @@ class PlaylistCarousel extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
                         child: Text("abcdefghijklmnopqrstuvwx",
-                            style: AppText.dark.subheadline),
+                            style: AppText.subheadline),
                       ),
                       Text(
                         "58 minutes",
-                        style: AppText.dark.footnote
+                        style: AppText.footnote
                             .copyWith(color: CupertinoColors.systemGrey),
                       )
                     ],

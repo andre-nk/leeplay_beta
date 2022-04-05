@@ -63,14 +63,14 @@ class OnboardingPage extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 22.0),
                         child: Text(
                           "Unofficial music player for Leeplay's playlists.",
-                          style: AppText.dark.title1,
+                          style: AppText.title1,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 13.0),
                         child: Text(
                           "Bringing hours of curated playlist for your ever-changing moods and life phases.",
-                          style: AppText.dark.body,
+                          style: AppText.body,
                         ),
                       ),
                       Padding(
@@ -81,7 +81,7 @@ class OnboardingPage extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 "Get started using NAVER",
-                                style: AppText.dark.body.copyWith(
+                                style: AppText.body.copyWith(
                                   fontWeight: FontWeight.w600,
                                   height: 1,
                                   color: CupertinoColors.white,

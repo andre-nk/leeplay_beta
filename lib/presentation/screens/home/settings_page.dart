@@ -1,11 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cupertino_settings/flutter_cupertino_settings.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:leeplay/config/media_query.dart';
 import 'package:leeplay/config/theme.dart';
 import 'package:leeplay/domain/auth/cubit/auth_cubit.dart';
 import 'package:leeplay/domain/theme/cubit/theme_cubit.dart';
+import 'package:leeplay/presentation/widgets/home/about_leeplay_bottomsheet.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -19,7 +18,7 @@ class SettingsPage extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16.0, bottom: 8, top: 24),
           child: Text(
             "THEME",
-            style: AppText.dark.subheadline.copyWith(color: CupertinoColors.systemGrey),
+            style: AppText.subheadline.copyWith(color: CupertinoColors.systemGrey),
           ),
         ),
         BlocBuilder<ThemeCubit, ThemeState>(
@@ -48,7 +47,7 @@ class SettingsPage extends StatelessWidget {
             alignment: Alignment.center,
             child: Text(
               'Auto translate playlist title',
-              style: AppText.dark.callout,
+              style: AppText.callout,
             ),
           ),
           contentWidget: CupertinoSwitch(
@@ -58,46 +57,8 @@ class SettingsPage extends StatelessWidget {
         ),
         CSButton(CSButtonType.DEFAULT, "About LEEPLAY", () {
           showCupertinoModalBottomSheet(
-            elevation: 100,
             context: context,
-            builder: (context) => SizedBox(
-              height: MQuery.height(0.45, context),
-              child: CupertinoPageScaffold(
-                child: Padding(
-                  padding: const EdgeInsets.all(24.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      BlocBuilder<ThemeCubit, ThemeState>(
-                        builder: (context, state) {
-                          return SvgPicture.asset(
-                            "assets/leeplay.svg",
-                            color: state is LightTheme
-                                ? CupertinoColors.black
-                                : CupertinoColors.white,
-                          );
-                        },
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 22.0),
-                        child: Text(
-                          "리플레이 LEEPLAY",
-                          style: AppText.dark.title1,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 13.0),
-                        child: Text(
-                          "Leeplay is a korean YouTube channel that regularly uploads a hand-picked playlist of independent musics from various genres. Moreover, you can find LEEPLAY's photography work (featured in every playlist video) in the official Grafolio site.",
-                          style: AppText.dark.body.copyWith(height: 1.5),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            builder: (context) => const AboutLeeplayBottomSheet()
           );
         }),
         const CSHeader(''),
